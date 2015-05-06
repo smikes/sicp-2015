@@ -1,3 +1,5 @@
+;; exercise from SICP ch1 p. 21
+
 ;; exercise 1.1
 ;; (omitted)
 
@@ -22,3 +24,16 @@
 ;; (b > 0 ? add : sub)(a, b);
 
 ;; exercise 1.5 
+(define (p) (p))
+(define (test x y)
+  (if (= x 0)
+      0
+      y))
+
+;; applicative: infinite loop
+;; normal: 0
+;;
+;; basically testing whether the argument is evaluated before passed to `if`
+;; need a level of function-call indirection becasue `if` is a special form
+;; (if #t 0 (p)) => 0 in both applicative and normal orders
+
